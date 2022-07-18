@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
+    <title>Shop cho trẻ Sơ Sinh</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="header">
+            <div class="logo">
+                <img src="./img/logo.jfif" alt="">
+                <h1>Baby Shop</h1>
+            </div>
+
+            <ul>
+                <li>
+                    <img src="./img/avt.jfif" alt="">
+                    Nhóm 6
+                </li>
+                <span>|</span>
+                <li>
+                    <i class="ti-bell"></i>
+                    Thông báo
+                </li>
+                <span>|</span>
+                <li>Đăng xuất</li>
+                <span>|</span>
+                <li><i class="ti-help-alt"></i>
+                    Trợ giúp</li>
+                <span>|</span>
+                <li>Góp ý và liên hệ</li>
+            </ul>
+        </div>
+    </header> 
+    <!-- Animation ảnh  -->
+    <div id="slide_show">
+        <!-- Nút Tiến Lùi -->
+        <div class="move">
+            <div class="btn btn_comeback">
+                <button onclick="leftSide()">
+                    <i class="ti-angle-left"></i>
+                </button>
+            </div>
+
+            <div class="btn btn_continue">
+                <button onclick="slideShow()">
+                    <i class="ti-angle-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="slide_pad">
+            <img id="slide" src="./img/slide1.jpg" alt="">  
+        </div>
+    </div>
+
+    <!-- Content  -->
+    <content>
+        <div class="container">
+            <!-- Menu Select -->  
+            <div class="menu">
+                <div class="menu_text">
+                    <h3>
+                        <i class="ti-menu-alt"></i>
+                        Danh Mục
+                    </h3>
+                </div>
+
+                <div class="cart">
+                    <h3 class="tabs" onclick="changeProductList('producted', this)">
+                        <i class="ti-shopping-cart-full"></i>
+                        Sản Phẩm
+                    </h3>
+                </div>
+
+                <!-- Quản lí doanh thu -->
+                <div class="turnover">
+                    <ul> 
+                            <span>
+                            <i class="ti-clipboard"></i>
+                            Cá Nhân </span>
+                           
+                        <li class="tabs" onclick="changeProductList('entered', this)">
+                            <i class="ti-import"></i>
+                            Đã Nhập
+                        </li>
+                        <li class="tabs" onclick="changeProductList('selling', this)">
+                            <i class="ti-bolt"></i>
+                            Đang bán
+                        </li>
+                        <li class="tabs" onclick="changeProductList('sold', this)">
+                            <i class="ti-export"></i>
+                            Đã bán
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Menu Hiển Thị -->
+            <div class="content">
+                <!-- Công cụ -->
+                <div class="tools">
+                    <form>   
+                        <div class="search_field">
+                            <input type="text" placeholder="Nhập để tìm kiếm...">
+                        </div>
+                        <button type="submit">
+                            <img src="./img/search.png" alt="">
+                        </button>
+                    </form>
+
+                    <div class="order">
+                        <div class="list_order">
+                            <i class="ti-truck"></i>
+                            <span>Đơn Hàng</span>
+                        </div>
+                        <div class="no_order">
+                            <img src="./img/empty-cart.png" alt="" class="header__cart-list-no-cart-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quảng cáo -->
+                <div id="review" class="advertisement">
+                    <div class="direction">
+                        <i class="ti-angle-left" onclick="returnImg()"></i>
+                        <i class="ti-angle-right" onclick="nextImg()"></i>
+                    </div>
+                   
+                    <div class="introduce">
+                        <img src="./img/introduce/introduce1.png" alt="">
+                        <img src="./img/introduce/introduce2.png" alt="">
+                        <img src="./img/introduce/introduce3.png" alt="">
+                        <img src="./img/introduce/introduce4.png" alt="">
+                        <img src="./img/introduce/introduce5.png" alt="">
+                        <img src="./img/introduce/introduce6.png" alt="">
+                        <img src="./img/introduce/introduce7.jpg" alt="">
+                        <img src="./img/introduce/introduce8.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Sản Phẩm -->
+                    <div id="producted">
+                        <div class="product">
+                            <div class="product_items">
+                                <img src="./img/product_img1.jpg" alt="">
+                                <p><b>Nôi cũi đa năng 6 chế độ thay đổi linh hoạt - BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>4.380.000 ₫</del></span>
+                                    <span><b>- 50%:</b> </span>
+                                    <p><b>2.190.000 ₫</b></p>
+                                </div>
+                            </div>
+        
+                            <div class="product_items">
+                                <img src="./img/product_img2.jpg" alt="">
+                                <p><b>Xe tập đi em bé - BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>2.650.000₫</del></span>
+                                    <span><b>-55%:</b> </span>
+                                    <p><b>1.490.000 ₫</b></p>
+                                </div>
+                            </div>
+        
+                            <div class="product_items">
+                                <img src="./img/product_img3.jpg" alt="">
+                                <p><b>Tủ đựng đồ cho bé -BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>2.492.000₫</del></span>
+                                    <span><b>-35%:</b> </span>
+                                    <p><b>1.620.000 ₫</b></p>
+                                </div>
+                            </div>
+        
+                            <div class="product_items">
+                                <img src="./img/product_img4.jpg" alt="">
+                                <p><b>Xe đẩy cao cấp -  BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>6.630.000 ₫</del></span>
+                                    <span><b> -40%:</b> </span>
+                                    <p><b>3.980.000 ₫</b></p>   
+                                </div>
+                            </div>
+    
+                            <div class="product_items">     
+                                <img src="./img/product_img5.jpg" alt="">
+                                <p><b>Set áo váy cho bé gái cánh tiên HN22H- BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>529.000 ₫</del></span>
+                                    <span><b>-35%:</b></span>
+                                    <p><b>189.000 ₫</b></p>
+                                </div>
+                            </div>
+        
+                            <div class="product_items">
+                                <img src="./img/product_img6.jpg" alt="">
+                                <p><b>Bỉm - Tã quần Molfix Ultra Jumbo size M-BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>590.000 ₫</del></span>
+                                    <span><b>- 25%:</b> </span>
+                                    <p><b>440.000 ₫</b></p>
+                                </div>
+                            </div>
+        
+                            <div class="product_items">
+                                <img src="./img/product_img7.jpg" alt="">
+                                <p><b>Sữa bột Ensure Úc hương Vanilla 850g - BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>1.060.000 ₫</del></span>
+                                    <span><b>- 30%:</b> </span>
+                                    <p><b>749.000 ₫</b></p>
+                                </div>
+                            </div>
+        
+                            <div class="product_items">
+                                <img src="./img/product_img1.jpg" alt="">
+                                <p><b>Combo 6 hộp sữa bột Nutren Junior 850g New - BabyShop</b> </p>
+                                <div class="price">
+                                    <span><del>3.654.000 ₫</del></span>
+                                    <span><b>- 30%:</b> </span>
+                                    <p><b>2.560.000 ₫</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Quản lí sản phẩm đã nhập -->
+                <div id="entered" class="imported_items">
+                    <!-- Bảng in hàng hòa -->
+                    <div class="table_imported">
+                        <h3>Danh Sách Hàng Đã Nhập</h3>
+                        <table>
+                            <thead>
+                                <tr class="thead_imported">
+                                    <td>Tên Sản Phẩm</td>
+                                    <td>Ngày Nhập</td>
+                                    <td>Đơn Giá</td>
+                                    <td>Số Lượng</td>
+                                    <td>Thành Tiền</td>   
+                                </tr>
+                            </thead>
+
+                            <tbody id="result_imported">
+                                <tr>
+                                    <td>Siro Wellbaby Multi-Vitamin Liquid 150m</td>
+                                    <td>23/06/2022</td>
+                                    <td>250.000đ</td>
+                                    <td>30</td>
+                                    <td>7.500.000 đ</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Tã Kiyuko size L 50 miếng (9 - 14kg)</td>
+                                    <td>23/06/2022</td>
+                                    <td>120.000đ</td>
+                                    <td>15</td>
+                                    <td>1.800.000 đ</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Bộ quần áo sơ sinh cộc tay in hình NBA22 (Hồng)</td>
+                                    <td>23/06/2022</td>
+                                    <td>150.000đ</td>
+                                    <td>5</td>
+                                    <td>750.000 đ</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Bao tay chân ND22H (trắng)</td>
+                                    <td>23/06/2022</td>
+                                    <td>25.000đ</td>
+                                    <td>10</td>
+                                    <td>250.000 đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Yếm sơ sinh buộc dây ND22H (trắng hồng)</td>
+                                    <td>23/06/2022</td>
+                                    <td>15.000đ</td>
+                                    <td>10</td>
+                                    <td>150.000 đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Mũ sơ sinh bé gái ND22H (trắng hồng)</td>
+                                    <td>23/06/2022</td>
+                                    <td>35.000đ</td>
+                                    <td>10</td>
+                                    <td>350.000 đ</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thêm sản phẩm -->
+                    <div class="imported_user">
+                        <p> Thêm Sản Phẩm</p>
+                        <div class="form_imported">
+                            <form action="" id="forms_imported">
+                                <div>
+                                    <label for="">Tên Sản Phẩm:</label>
+                                    <input type="text" name="name_product" id="name_imported" placeholder="Nhập tên sản phẩm">
+                                </div>
+    
+                                <div>
+                                    <label for="">Ngày Nhập:</label>
+                                    <input type="text" placeholder="Ngày nhập hàng" name="date_prd" id="date_imported">
+                                </div>
+    
+                                <div>
+                                    <label for="">Đơn Giá:</label>
+                                    <input type="text" name="price" onkeyup="upDatePriceImported()" id="price_imported" placeholder="- đ - ">
+                                </div>
+    
+                                <div>
+                                    <label for="">Số lượng:</label>
+                                    <input type="number" name="value" onkeyup="upDatePriceImported()" id="value_imported" placeholder="- 0 -">
+                                </div>
+    
+                                <div>
+                                    <label for="">Thành Tiền:</label>
+                                    <input type="text" name="money" onkeyup="upDatePriceImported()" id="money_imported" disabled="true" value="0">
+                                </div>
+    
+                                <div class="btn_imported">
+                                    <input type="button" value="Add" onclick="addImported()" class="btn_input">
+                                    <input type="button" value="Reset" onclick="resetImported()" class="btn_input">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quản lí đồ đang treo shop -->
+                <div id="selling" class="selling_items">
+                    <div class="product">
+                        <div id="item1" class="product_items">
+                            <img src="./img/product_img1.jpg" alt="">
+                            <p><b>Nôi cũi đa năng 6 chế độ thay đổi linh hoạt - BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>4.380.000 ₫</del></span>
+                                <span><b>- 50%:</b> </span>
+                                <p><b>2.190.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:12</span>
+                                <span>Còn lại:38</span>
+                                <button onclick="remove('item1')">Gỡ </button>
+                            </div>
+                        </div>
+    
+                        <div id="item2" class="product_items">
+                            <img src="./img/product_img2.jpg" alt="">
+                            <p><b>Xe tập đi em bé - BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>2.650.000₫</del></span>
+                                <span><b>-55%:</b> </span>
+                                <p><b>1.490.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:8</span>
+                                <span>Còn lại:12</span>
+                                <button onclick="remove('item2')">Gỡ </button>
+                            </div>
+                        </div>
+    
+                        <div id="item3" class="product_items">
+                            <img src="./img/product_img3.jpg" alt="">
+                            <p><b>Tủ đựng đồ cho bé -BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>2.492.000₫</del></span>
+                                <span><b>-35%:</b> </span>
+                                <p><b>1.620.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:20</span>
+                                <span>Còn lại:15</span>
+                                <button onclick="remove('item3')">Gỡ </button>
+                            </div>
+                        </div>
+    
+                        <div id="item4" class="product_items">
+                            <img src="./img/product_img4.jpg" alt="">
+                            <p><b>Xe đẩy cao cấp -  BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>6.630.000 ₫</del></span>
+                                <span><b> -40%:</b> </span>
+                                <p><b>3.980.000 ₫</b></p>   
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:18</span>
+                                <span>Còn lại:32</span>
+                                <button onclick="remove('item4')">Gỡ </button>
+                            </div>
+                        </div>
+
+                        <div id="item5" class="product_items">     
+                            <img src="./img/product_img5.jpg" alt="">
+                            <p><b>Set áo váy cho bé gái cánh tiên HN22H- BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>529.000 ₫</del></span>
+                                <span><b>-35%:</b></span>
+                                <p><b>189.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:65</span>
+                                <span>Còn lại:125</span>
+                                <button onclick="remove('item5')">Gỡ </button>
+                            </div>
+                        </div>
+    
+                        <div id="item6" class="product_items">
+                            <img src="./img/product_img6.jpg" alt="">
+                            <p><b>Bỉm - Tã quần Molfix Ultra Jumbo size M-BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>590.000 ₫</del></span>
+                                <span><b>- 25%:</b> </span>
+                                <p><b>440.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:50</span>
+                                <span>Còn lại:100</span>
+                                <button onclick="remove('item6')">Gỡ </button>
+                            </div>
+                        </div>
+    
+                        <div id="item7" class="product_items">
+                            <img src="./img/product_img7.jpg" alt="">
+                            <p><b>Sữa bột Ensure Úc hương Vanilla 850g - BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>1.060.000 ₫</del></span>
+                                <span><b>- 30%:</b> </span>
+                                <p><b>749.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:27</span>
+                                <span>Còn lại:43</span>
+                                <button onclick="remove('item7')">Gỡ </button>
+                            </div>
+                        </div>
+    
+                        <div id="item8" class="product_items">
+                            <img src="./img/product_img1.jpg" alt="">
+                            <p><b>Combo 6 hộp sữa bột Nutren Junior 850g New - BabyShop</b> </p>
+                            <div class="price">
+                                <span><del>3.654.000 ₫</del></span>
+                                <span><b>- 30%:</b> </span>
+                                <p><b>2.560.000 ₫</b></p>
+                            </div>
+                            <div class="manager">
+                                <span>Đã bán:39</span>
+                                <span>Còn lại:61</span>
+                                <button onclick="remove('item8')">Gỡ </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quản lí sản phẩm đã bán -->
+                <div id="sold" class="sold_items">
+                    <div class="table_sold">
+                        <h3>Danh Sách Đã Bán</h3>
+                        <table>
+                            <thead>
+                                <tr class="thead_sold">
+                                    <td>Tên Sản Phẩm</td>
+                                    <td>Kho</td>
+                                    <td>Đơn Giá</td>
+                                    <td>Đã Bán </td>
+                                    <td>Thành Tiền</td> 
+                                    <td>Còn Lại</td>
+                                </tr>
+                            </thead>
+
+                            <tbody id="result_sold">
+                                <tr>
+                                    <td>Nôi cũi đa năng 6 chế độ thay đổi linh hoạt</td>
+                                    <td>10</td>
+                                    <td>2.190.000 đ</td>
+                                    <td>3 </td>
+                                    <td>6.570.000 đ</td> 
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>Xe tập đi em bé</td>
+                                    <td>15</td>
+                                    <td>1.490.000 đ</td>
+                                    <td>7 </td>
+                                    <td>10.430.000 đ</td> 
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Tã quần Molfix Ultra Jumbo size M</td>
+                                    <td>50</td>
+                                    <td>440.000 đ</td>
+                                    <td>25</td>
+                                    <td>11.000.000 đ</td> 
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>Set áo váy cho bé gái cánh tiên HN22H</td>
+                                    <td>120</td>
+                                    <td>189.000 đ</td>
+                                    <td>34</td>
+                                    <td>6.426.000 đ</td> 
+                                    <td>86</td>
+                                </tr>
+                                <tr>
+                                    <td>Siro Wellbaby Multi-Vitamin Liquid 150m</td>
+                                    <td>250</td>
+                                    <td>350.000 đ</td>
+                                    <td>165 </td>
+                                    <td>57.750.000 đ</td> 
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <td>Bao tay chân ND22H (trắng)</td>
+                                    <td>200</td>
+                                    <td>40.000 đ</td>
+                                    <td>120 </td>
+                                    <td>4.800.000 đ</td> 
+                                    <td>80</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thêm vào danh sách đã bán -->
+                    <div class="sold_user">
+                        <p> Thêm Sản Phẩm</p>
+                        <div class="form_sold">
+                            <form action="" id="form_solds">
+                                <div>
+                                    <label for="">Tên Sản Phẩm:</label>
+                                    <input type="text" name="name_sold" id="name_sold" placeholder="Nhập tên sản phẩm">
+                                </div>
+    
+                                <div>
+                                    <label for="">Kho:</label>
+                                    <input type="text" placeholder="Số lượng trong kho" name="bunker_sold" onkeyup="upDatePriceSold()" id="bunker_sold">
+                                </div>
+    
+                                <div>
+                                    <label for="">Đơn Giá:</label>
+                                    <input type="text" name="price" onkeyup="upDatePriceSold()" id="price_sold" placeholder="- đ - ">
+                                </div>
+    
+                                <div>
+                                    <label for="">Đã bán:</label>
+                                    <input type="number" name="value" onkeyup="upDatePriceSold()" id="value_sold" placeholder="Số lượng đã bán">
+                                </div>
+    
+                                <div>
+                                    <label for="">Thành Tiền:</label>
+                                    <input type="text" name="money" onkeyup="upDatePriceSold()" id="money_sold" disabled="true" value="0">
+                                </div>
+    
+                                <div>
+                                    <label for="">Còn Lại:</label>
+                                    <input type="text" name="money" onkeyup="upDatePriceSold()" id="rest_sold" disabled="true" value="0">
+                                </div>
+    
+                                <div class="btn_sold">
+                                    <input type="button" value="Add" onclick="addSold()" class="btn_input">
+                                    <input type="button" value="Reset" onclick="resetSold()" class="btn_input">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+    
+    <footer>
+        <div class="footer_logo">
+            <span>B</span>
+            <span>a</span>
+            <span>B</span>
+            <span>y</span>
+            <span>Shop</span>
+        </div>
+        <div class="footer_icon">
+            <a href=""><i class="ti-facebook"></i></a>   
+            <a href=""><i class="ti-youtube"></i></a>
+            <a href=""><i class="ti-instagram"></i></a>
+            <a href=""><i class="ti-twitter-alt"></i></a>
+            <a href=""><i class="ti-pinterest-alt"></i></a>
+        </div>
+    </footer>
+</body>
+
+<script src="main.js"></script>
+</html>
